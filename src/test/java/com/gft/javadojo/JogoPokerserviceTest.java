@@ -17,11 +17,52 @@ public class JogoPokerserviceTest {
 	@Autowired
 	private JokenpoService jokenpoService;
 	
-	@Test
-	public void test_getJogadorComMelhorMao() {
-		boolean retorno = jokenpoService.jogar();
+	@Test 
+	public void JogadaPedraTesoura() {
+		ObjetoDaJogada jogadorA = ObjetoDaJogada.Pedra;
+		ObjetoDaJogada jogadorB = ObjetoDaJogada.Tesoura;
+		
+		Jogador retorno = jokenpoService.jogar(jogadorA, jogadorB);
 
-		assertEquals(retorno, true);
+		assertEquals(Jogador.JogadorA,retorno );
+	}
+	
+	@Test
+	public void JogadaPedraPapel() {
+		ObjetoDaJogada jogadorA = ObjetoDaJogada.Pedra;
+		ObjetoDaJogada jogadorB = ObjetoDaJogada.Papel;
+		
+		Jogador retorno = jokenpoService.jogar(jogadorA, jogadorB);
+
+		assertEquals(Jogador.JogadorB,retorno );
+	}
+	
+	@Test
+	public void JogadaPapelTesoura() {
+		ObjetoDaJogada jogadorA = ObjetoDaJogada.Papel;
+		ObjetoDaJogada jogadorB = ObjetoDaJogada.Tesoura;
+		
+		Jogador retorno = jokenpoService.jogar(jogadorA, jogadorB);
+
+		assertEquals(Jogador.JogadorB,retorno );
+	}
+
+	@Test
+	public void JogadaPapelPedra() {
+		ObjetoDaJogada jogadorA = ObjetoDaJogada.Papel;
+		ObjetoDaJogada jogadorB = ObjetoDaJogada.Pedra;
+		
+		Jogador retorno = jokenpoService.jogar(jogadorA, jogadorB);
+
+		assertEquals(Jogador.JogadorA,retorno );
+	}
+	
+	@Test
+	public void Empate() {
+		
+		Jogador ganhador = jokenpoService.jogar(ObjetoDaJogada.Papel, ObjetoDaJogada.Pedra);
+		
+		assertEquals(Jogador.JogadorA, ganhador);		
 	}
 
 }

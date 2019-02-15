@@ -33,7 +33,7 @@ public class ExecutaAplicacaoJokenpo {
 	@Bean
 	public CommandLineRunner run() {
 		return args -> {
-			jokenpoService.jogar();
+//			jokenpoService.jogar();
 		};
 	}
 }
