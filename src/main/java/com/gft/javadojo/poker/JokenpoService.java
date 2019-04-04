@@ -29,7 +29,7 @@ public class JokenpoService {
 		case Tesoura:
 			return jogadorB.equals(ObjetoDaJogada.Papel) ? Jogador.JogadorA : Jogador.JogadorB;
 		case Papel:
-			return jogadorB.equals(ObjetoDaJogada.Tesoura) ? Jogador.JogadorA : Jogador.JogadorB;
+			return jogadorB.equals(ObjetoDaJogada.Pedra) ? Jogador.JogadorA : Jogador.JogadorB;
 		default:
 			return null;
 		}
