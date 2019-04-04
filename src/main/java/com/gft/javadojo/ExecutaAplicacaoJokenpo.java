@@ -33,7 +33,8 @@ public class ExecutaAplicacaoJokenpo {
 	@Bean
 	public CommandLineRunner run() {
 		return args -> {
-//			jokenpoService.jogar();
+			Jogador jogador = jokenpoService.jogar(ObjetoDaJogada.Papel, ObjetoDaJogada.Papel);
+			System.out.println(jogador);
 		};
 	}
 }
